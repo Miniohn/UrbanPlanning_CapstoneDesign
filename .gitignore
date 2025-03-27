@@ -20,6 +20,7 @@
 
 # RStudio files
 .Rproj.user/
+UP_CD25-1.Rproj
 
 # produced vignettes
 vignettes/*.html
