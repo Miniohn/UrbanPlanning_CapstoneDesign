@@ -1,0 +1,3 @@
+### "And the patriarchs, moved with envy, sold Joseph into Egypt: but God was with him"
+
+### SNA(Social Network Analysis) with igraph
