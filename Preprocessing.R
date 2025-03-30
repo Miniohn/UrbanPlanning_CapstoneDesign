@@ -65,7 +65,7 @@ data_2010_table <- data_2010_n %>%
   pivot_longer(
     cols = -from,
     names_to = "to",
-    values_to = "value"
+    values_to = "weight"
   )
 data_2010_table <- data_2010_table %>% data.frame()
 head(data_2010_table,15)
@@ -77,7 +77,7 @@ data_2020_table <- data_2020_n %>%
   pivot_longer(
     cols = -from,
     names_to = "to",
-    values_to = "value"
+    values_to = "weight"
   )
 data_2020_table <- data_2020_table %>% data.frame()
 head(data_2020_table,15)
@@ -88,10 +88,16 @@ data_2022_table <- data_2022_n %>%
   pivot_longer(
     cols = -from,
     names_to = "to",
-    values_to = "value"
+    values_to = "weight"
   )
 data_2022_table <- data_2022_table %>% data.frame()
 head(data_2022_table,15)
 
+# from!=to | weight != 0 
+data_2010_fin <-data_2010_table %>% filter(from!=to) %>% filter(weight!=0)
+data_2020_fin <-data_2020_table %>% filter(from!=to) %>% filter(weight!=0)
+data_2022_fin <-data_2022_table %>% filter(from!=to) %>% filter(weight!=0)
 
-## Create a co-occurrence matrix
+head(data_2010_fin,15)
+head(data_2020_fin,15)
+head(data_2022_fin,15)
