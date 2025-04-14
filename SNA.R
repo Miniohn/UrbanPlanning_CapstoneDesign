@@ -90,7 +90,7 @@ final_2015 <- left_join(df_ec_2015,code_2015,by = c("id" = "code")) %>% select(i
 final_2020 <- left_join(df_ec_2020,code_2020,by = c("id" = "code")) %>% select(id,title,eigen_centrality)
 final_2022 <- left_join(df_ec_2022,code_2022,by = c("id" = "code")) %>% select(id,title,eigen_centrality)
 
-head(final_2010)
+head(final_2010,10)
 head(final_2015)
 head(final_2020)
 head(final_2022)
@@ -111,7 +111,7 @@ writeDataTable(example,"eigen_2015",final_2015)
 writeDataTable(example,"eigen_2020",final_2020)
 writeDataTable(example,"eigen_2022",final_2022)
 
-saveWorkbook(example, file="/Users/haley/Desktop/2025-1/Research/data/Korea/data_result/industry_result_final.xlsx")
+saveWorkbook(example, file="/Users/haley/Desktop/2025-1/Research/data/Korea/data_result/industry_result_final2.xlsx")
 
 
 ## For Gephi Visualization
@@ -149,7 +149,7 @@ head(data_2020_edge)
 head(data_2022_edge)
 
 # save EDGE table
-write.csv(data_2010_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2010", row.names = FALSE)
+write.csv(data_2010_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2010_2", row.names = FALSE)
 write.csv(data_2015_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2015", row.names = FALSE)
 write.csv(data_2020_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2020", row.names = FALSE)
 write.csv(data_2022_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2022", row.names = FALSE)
@@ -162,7 +162,7 @@ data_2020_node <-final_2020 %>% rename(label=title) %>% select(id, label, eigen_
 data_2022_node <-final_2022 %>% rename(label=title) %>% select(id, label, eigen_centrality)
 
 # save NODE table
-write.csv(data_2010_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2010", row.names = FALSE)
+write.csv(data_2010_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2010_2", row.names = FALSE)
 write.csv(data_2015_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2015", row.names = FALSE)
 write.csv(data_2020_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2020", row.names = FALSE)
 write.csv(data_2022_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2022", row.names = FALSE)
