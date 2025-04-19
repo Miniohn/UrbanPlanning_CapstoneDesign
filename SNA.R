@@ -73,10 +73,11 @@ head(df_ec_2022)
 ## Append with code
 
 # preprocessing code name
-code_2010$code<-paste0("X",code_2010$code)
-code_2015$code<-paste0("X",code_2015$code)
-code_2020$code<-paste0("X",code_2020$code)
-code_2022$code<-paste0("X",code_2022$code)
+
+code_2010$code<-substr(code_2010$code,2,5)
+code_2015$code<-substr(code_2015$code,2,4)
+code_2020$code<-substr(code_2020$code,2,4)
+code_2022$code<-substr(code_2022$code,2,4)
 
 head(code_2010)
 head(code_2015)
@@ -111,7 +112,7 @@ writeDataTable(example,"eigen_2015",final_2015)
 writeDataTable(example,"eigen_2020",final_2020)
 writeDataTable(example,"eigen_2022",final_2022)
 
-saveWorkbook(example, file="/Users/haley/Desktop/2025-1/Research/data/Korea/data_result/industry_result_final2.xlsx")
+saveWorkbook(example, file="/Users/haley/Desktop/2025-1/Research/data/Korea/data_result/industry_result_final3.xlsx")
 
 
 ## For Gephi Visualization
@@ -149,10 +150,10 @@ head(data_2020_edge)
 head(data_2022_edge)
 
 # save EDGE table
-write.csv(data_2010_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2010_2", row.names = FALSE)
-write.csv(data_2015_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2015", row.names = FALSE)
-write.csv(data_2020_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2020", row.names = FALSE)
-write.csv(data_2022_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2022", row.names = FALSE)
+write.csv(data_2010_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2010_fin", row.names = FALSE)
+write.csv(data_2015_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2015_fin", row.names = FALSE)
+write.csv(data_2020_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2020_fin", row.names = FALSE)
+write.csv(data_2022_edge, "/Users/haley/Desktop/2025-1/Research/data/Korea/edge_industry_2022_fin", row.names = FALSE)
 
 
 # make NODe csv file
@@ -162,8 +163,8 @@ data_2020_node <-final_2020 %>% rename(label=title) %>% select(id, label, eigen_
 data_2022_node <-final_2022 %>% rename(label=title) %>% select(id, label, eigen_centrality)
 
 # save NODE table
-write.csv(data_2010_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2010_2", row.names = FALSE)
-write.csv(data_2015_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2015", row.names = FALSE)
-write.csv(data_2020_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2020", row.names = FALSE)
-write.csv(data_2022_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2022", row.names = FALSE)
+write.csv(data_2010_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2010_fin", row.names = FALSE)
+write.csv(data_2015_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2015_fin", row.names = FALSE)
+write.csv(data_2020_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2020_fin", row.names = FALSE)
+write.csv(data_2022_node, "/Users/haley/Desktop/2025-1/Research/data/Korea/node_industry_2022_fin", row.names = FALSE)
 
